@@ -2,84 +2,124 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Gothic:wght@800&display=swap" rel="stylesheet">
 <title>권택준</title>
 <style>
 body{
+	font-family: "Nanum Gothic", serif;
+	font-weight: 800;
+	font-style: normal;
+	display: flex;
+	flex-direction:column;
+	align-items:center;
 	margin: 0;
+	font-size:20px;
 }
-.page {
-	position: relative;
-	top: 0;
-	width: 100%;
-      	height: 100vh;
-      	background: linear-gradient(to bottom, #4facfe, #00f2fe);	
-}
-.button-view{
-	position: fixed;
-	bottom : 0;
+.info{
+	min-width:600px;
 	width:100%;
-	height:20vh;
-	background: black;
-	z-index:10000;
+	position:sticky;
+	top:0px;
+	align-items:center;
+	justify-items:start;
+	display:grid;
+	z-index:1;
+	background-color:white;
+
+
+	grid-template-rows: 60px repeat(4, 30px);
+	height:180px;
+	padding:20px;
+}
+
+.projects{
+	min-width:600px;
+	width:50%;
+	display:flex;
+	align-items:center;
+	text-align:center;
+	justify-content:center;
+	flex-direction:column;
+	padding:20px;
+}
+
+.project-group{
+	font-family: "Jua", serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size:25px;
+}
+
+.project{
+	margin-top:30px;
+	background-color:white;
+	padding:20px;
+	display:flex;
+	flex-direction:column;
+  	border-radius: 20px;
+  	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.project .title{
+	font-family: "Jua", serif;
+	font-weight: 400;
+	font-style: normal;
+	color:black;
+	padding:10px;
+	font-size:25px;
+	margin-bottom:20px;
 }
 </style>
-<script async>
-let isScrolling = false;
-let elements = null;
-let elements_pos = null;
-
-let view_idx = -1;
-
-window.addEventListener("load", function(){
-	elements = document.querySelectorAll("[class='page']");
-	for(let i = 0; i < elements.length; i++) elements[i].style.setProperty('z-index', i);
-});
-window.addEventListener("scroll", function() {
-	if (elements && !isScrolling) {
-		isScrolling = true;
-		requestAnimationFrame(function() {
-			let low = 0;
-			let high = elements.length;
-			while(low < high){
-				const mid = Math.floor((low + high) / 2);
-				if (0 < elements[mid].getBoundingClientRect().top) high = mid;
-				else low = mid + 1;
-			}
-			const curr = low - 1;
-			if(view_idx != curr){
-				if(0 <= curr){
-					elements[curr].style.setProperty('position', 'relative');
-					console.log(window.scrollY + elements[curr].getBoundingClientRect().top);
-					elements[curr].style.setProperty('position', 'sticky');
-				}
-
-				view_idx = curr;
-			}
-/*
-			if(0 <= curr){
-				elements[curr].style.setProperty('position', 'relative');
-				console.log(window.scrollY + elements[curr].getBoundingClientRect().top);
-				elements[curr].style.setProperty('position', 'sticky');
-			}
-*/
-
-			isScrolling = false;
-		});
-	}
-});
-</script>
 </head>
 <body>
+<div class="info">
+<img style="grid-area: 1 / 1 / span 5 / span 1;justify-self:end;height:100%;border-radius:50px;border:3px solid #ccc;margin-right:25px;" src="./images/photo.jpg"/>
+<span style="grid-area: 1 / 2 / span 1 / span 1;font-size:35px;justify-self:start;">권택준 Kwon Taek June</span>
+<div style="grid-area: 2 / 2 / span 1 / span 1;"><img src="./images/phone.jpg"/>&nbsp;010-7159-9504</div>
+<div style="grid-area: 3 / 2 / span 1 / span 1;"><img src="./images/mail.jpg"/>&nbsp;rnjsxorwns12@gmail.com</div>
+<div style="grid-area: 4 / 2 / span 1 / span 1;"><img src="./images/github.jpg"/>&nbsp;<a style="color:#3065AC;" href="https://github.com/xorwns56">https://github.com/xorwns56</a></div>
+<div style="grid-area: 5 / 2 / span 1 / span 1;"><img src="./images/github.jpg"/>&nbsp;<a style="color:#3065AC;" href ="https://github.com/rnjsxorwns12">https://github.com/rnjsxorwns12</a></div>
+</div>
 
-<div class="page">
-aaa
+<div class="projects">
+	<div class="project-group">
+	<img src="./images/helmet.jpg"/></br>육군본부 정보체계관리단</br>전산체계개발과</br>프로그램 작성병
+	</div>
+
+	<div class="project">
+	<div class="title">육군 인트라넷 웹 체계 유지보수 업무</div>
+
+	</div>
+
+	<div class="project">
+	<div class="title">전자정부프레임워크 교육 이수</div>
+
+	</div>
+
+	<div class="project">
+	<div class="title">일과시간 외 개인 프로젝트</div>
+
+	</div>
 </div>
-<div class="page">
-Test
+
+<div class="projects">
+	<div class="project-group">
+	<img src="./images/graduation.jpg"/></br>상명대학교 천안캠퍼스</br>컴퓨터공학과</br>졸업 이후
+	</div>
+
+	<div class="project">
+	<div class="title">웹 화면 공유 게임 유틸리티 제작</div>
+
+	</div>
+
+	<div class="project">
+	<div class="title">최신 웹 기술 학습</div>
+
+	</div>
 </div>
-<div class="page">
-Test
+
 </div>
-<!--<div class="page"><h1>빈 페이지</h1></div>-->
 </body>
 </html>
