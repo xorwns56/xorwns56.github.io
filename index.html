@@ -35,7 +35,7 @@ body{
 }
 
 .projects{
-	min-width:600px;
+	max-width: 600px;
 	width:50%;
 	display:flex;
 	align-items:center;
@@ -53,6 +53,7 @@ body{
 }
 
 .project{
+	width:100%;
 	margin-top:30px;
 	background-color:white;
 	padding:20px;
@@ -62,14 +63,30 @@ body{
   	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
-.project .title{
+.title{
 	font-family: "Jua", serif;
 	font-weight: 400;
 	font-style: normal;
 	color:black;
 	padding:10px;
-	font-size:25px;
-	margin-bottom:20px;
+	font-size:28px;
+}
+
+.subtitle{
+	color:#333333;
+	font-size:20px;
+	text-align:left;
+}
+
+.project ul{
+	color:#555555;
+	font-size:20px;
+	text-align: left;
+	list-style-type:square;
+}
+
+.project ul li{
+	margin-bottom: 10px;
 }
 </style>
 </head>
@@ -89,18 +106,49 @@ body{
 	</div>
 
 	<div class="project">
-	<div class="title">육군 인트라넷 웹 체계 유지보수 업무</div>
-
+		<div class="title">인트라넷 웹 체계 유지보수 업무</div>
+		<div class="subtitle">개발 환경</div>
+		<ul>
+			<li>Eclipse(IDE)</li>
+			<li>Apache Tomcat(WAS)</li>
+			<li>Informix(Database)</li>
+		</ul>
+		<div class="subtitle">사용 기술</div>
+		<ul>
+			<li>HTML, CSS를 사용하여 웹 페이지 구조 설계 및 레이아웃 조정</li>
+			<li>JQuery를 활용하여 DOM 조작, 이벤트 처리, AJAX</li>
+			<li>JSP(Scriptlet) 동적 웹 페이지 작성</li>
+			<li>JDBC API로 데이터베이스 연결 및 SQL 쿼리 작성</li>
+		</ul>
+		<div class="subtitle">역할</div>
+		<ul>
+			<li>국방망을 통해 운영되는 웹 체계의 유지보수를 담당</li>
+			<li>소요 제기 담당자와의 의사 소통을 통해 프로젝트의 요구 사항을 파악 후 기능 개선</li>
+			<li>타 개발자가 작성한 코드를 분석 후 수정 및 보일러플레이트 코드 리팩토링</li>
+		</ul>
 	</div>
 
 	<div class="project">
 	<div class="title">전자정부프레임워크 교육 이수</div>
-
+		<div class="subtitle">교육 과정</div>
+		<ul>
+			<li>Maven</li>
+			<li>Spring</li>
+			<li>iBatis</li>
+			<li>JSTL</li>
+		</ul>
+		<div class="subtitle">수료증</div>
+		<ul>
+			<li></li>
+		</ul>
 	</div>
 
 	<div class="project">
 	<div class="title">일과시간 외 개인 프로젝트</div>
-
+		<div class="subtitle">프로젝트</div>
+		<ul>
+			<li></li>
+		</ul>
 	</div>
 </div>
 
@@ -110,13 +158,31 @@ body{
 	</div>
 
 	<div class="project">
-	<div class="title">웹 화면 공유 게임 유틸리티 제작</div>
+	<div class="title">미디 시퀀서</div>
+		<div class="subtitle">프로젝트</div>
+		<ul>
+			<li></li>
+		</ul>
+	</div>
 
+	<div class="project">
+	<div class="title">웹 화면 공유 게임 유틸리티 제작</div>
+		<div class="subtitle">프로젝트</div>
+		<ul>
+			<li></li>
+		</ul>
 	</div>
 
 	<div class="project">
 	<div class="title">최신 웹 기술 학습</div>
-
+		<div class="subtitle">Vue.js</div>
+		<ul>
+			<li></li>
+		</ul>
+		<div class="subtitle">SpringBoot</div>
+		<ul>
+			<li></li>
+		</ul>
 	</div>
 </div>
 
