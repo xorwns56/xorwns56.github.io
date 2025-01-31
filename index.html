@@ -88,21 +88,25 @@ body{
 .project ul li{
 	margin-bottom: 10px;
 }
+
+a{
+	color:#3065AC;
+}
 </style>
 </head>
 <body>
 <div class="info">
-<img style="grid-area: 1 / 1 / span 5 / span 1;justify-self:end;height:100%;border-radius:50px;border:3px solid #ccc;margin-right:25px;" src="./images/photo.jpg"/>
+<img style="grid-area: 1 / 1 / span 5 / span 1;justify-self:end;height:100%;border-radius:50px;border:3px solid #ccc;margin-right:25px;" src="./resource/photo.jpg"/>
 <span style="grid-area: 1 / 2 / span 1 / span 1;font-size:35px;justify-self:start;">권택준 Kwon Taek June</span>
-<div style="grid-area: 2 / 2 / span 1 / span 1;"><img src="./images/phone.jpg"/>&nbsp;010-7159-9504</div>
-<div style="grid-area: 3 / 2 / span 1 / span 1;"><img src="./images/mail.jpg"/>&nbsp;rnjsxorwns12@gmail.com</div>
-<div style="grid-area: 4 / 2 / span 1 / span 1;"><img src="./images/github.jpg"/>&nbsp;<a style="color:#3065AC;" href="https://github.com/xorwns56">https://github.com/xorwns56</a></div>
-<div style="grid-area: 5 / 2 / span 1 / span 1;"><img src="./images/github.jpg"/>&nbsp;<a style="color:#3065AC;" href ="https://github.com/rnjsxorwns12">https://github.com/rnjsxorwns12</a></div>
+<div style="grid-area: 2 / 2 / span 1 / span 1;"><img src="./resource/phone.jpg"/>&nbsp;010-7159-9504</div>
+<div style="grid-area: 3 / 2 / span 1 / span 1;"><img src="./resource/mail.jpg"/>&nbsp;rnjsxorwns12@gmail.com</div>
+<div style="grid-area: 4 / 2 / span 1 / span 1;"><img src="./resource/github.jpg"/>&nbsp;<a href="https://github.com/xorwns56" target="_blank">https://github.com/xorwns56</a></div>
+<div style="grid-area: 5 / 2 / span 1 / span 1;"><img src="./resource/github.jpg"/>&nbsp;<a href ="https://github.com/rnjsxorwns12" target="_blank">https://github.com/rnjsxorwns12</a></div>
 </div>
 
 <div class="projects">
 	<div class="project-group">
-	<img src="./images/helmet.jpg"/></br>육군본부 정보체계관리단</br>전산체계개발과</br>프로그램 작성병
+	<img src="./resource/helmet.jpg"/></br>육군본부 정보체계관리단</br>전산체계개발과</br>프로그램 작성병
 	</div>
 
 	<div class="project">
@@ -117,8 +121,8 @@ body{
 		<ul>
 			<li>HTML, CSS를 사용하여 웹 페이지 구조 설계 및 레이아웃 조정</li>
 			<li>JQuery를 활용하여 DOM 조작, 이벤트 처리, AJAX</li>
-			<li>JSP(Scriptlet) 동적 웹 페이지 작성</li>
-			<li>JDBC API로 데이터베이스 연결 및 SQL 쿼리 작성</li>
+			<li>JSP 동적 웹 페이지 작성</li>
+			<li>데이터베이스 연결 및 SQL 쿼리 작성</li>
 		</ul>
 		<div class="subtitle">역할</div>
 		<ul>
@@ -130,58 +134,80 @@ body{
 
 	<div class="project">
 	<div class="title">전자정부프레임워크 교육 이수</div>
-		<div class="subtitle">교육 과정</div>
+		<div class="subtitle">기존의 프로젝트</div>
 		<ul>
-			<li>Maven</li>
-			<li>Spring</li>
-			<li>iBatis</li>
-			<li>JSTL</li>
+			<li>개발에 필요한 JAR 라이브러리를 수동 설치</li>
+			<li>Scriptlet 방식으로 하나의 JSP 페이지 안에서 모든 로직이 수행되도록 작성</li>
+			<li>JDBC 드라이버로 Connection 생성, PreparedStatement 생성 후 파라미터 바인딩, ResultSet에 쿼리 결과 받아온 후 객체에 수동으로 맵핑</li>
 		</ul>
-		<div class="subtitle">수료증</div>
+		<div class="subtitle">전자정부프레임워크</div>
 		<ul>
-			<li></li>
+			<li>Maven으로 필요한 라이브러리와 그 라이브러리에 종속되는 다른 라이브러리를 자동으로 받아와서 빌드</li>
+			<li>Spring MVC 패턴을 도입해서 요청을 Controller에서 받아 Service 로직을 수행하고 그 결과를 Model로 받아와서 View에 전달한 후 JSTL로 출력</li>
+			<li>MyBatis로 SQL을 XML로 관리하며 파라미터와 결과값이 객체에 자동 맵핑</li>
 		</ul>
-	</div>
-
-	<div class="project">
-	<div class="title">일과시간 외 개인 프로젝트</div>
-		<div class="subtitle">프로젝트</div>
-		<ul>
-			<li></li>
+		<div class="subtitle"></div>
+		<ul style="list-style-type:none;">
+			<li><img src="./resource/certificate.png" style="width:90%;border:1px solid #ccc;"/></li>
 		</ul>
 	</div>
 </div>
 
 <div class="projects">
 	<div class="project-group">
-	<img src="./images/graduation.jpg"/></br>상명대학교 천안캠퍼스</br>컴퓨터공학과</br>졸업 이후
+	<img src="./resource/graduation.jpg"/></br>상명대학교 천안캠퍼스</br>컴퓨터공학과</br>졸업 이후
 	</div>
 
 	<div class="project">
-	<div class="title">미디 시퀀서</div>
-		<div class="subtitle">프로젝트</div>
+	<div class="title">MIDI 시퀀서 프로젝트</div>
+		<div class="subtitle">개발 환경</div>
 		<ul>
-			<li></li>
+			<li>Android Studio(IDE)</li>
 		</ul>
+		<div class="subtitle">사용 기술</div>
+		<ul>
+			<li>Android XML을 활용한 UI 설계</li>
+			<li>Java를 활용하여 UI를 통한 입력을 받아 MIDI 프로토콜로 메시지 전송</li>
+			<li>생성된 MIDI 데이터를 조합하여 .mid 음악파일로 최종 출력하는 기능 구현</li>
+		</ul>
+		<div class="subtitle">앱 데모 영상</div>
+			<li style="list-style-type:none;">
+			</br>
+			<video controls loop muted style="width:50%;">
+    			<source src="./resource/app-demo-video.mp4" type="video/mp4">
+			</video>
+			</li>
 	</div>
 
 	<div class="project">
 	<div class="title">웹 화면 공유 게임 유틸리티 제작</div>
-		<div class="subtitle">프로젝트</div>
+		<div class="subtitle">사용 기술</div>
 		<ul>
-			<li></li>
+			<li>HTML, CSS</li>
+			<li>Vanilla Javascript</li>
+			<li>게임화면을 WebRTC의 화면 공유 스트림으로 받아와서 HTML Canvas에 받아 실시간 이미지 처리 후 게임 내 패턴 분석</li>
+			<li>Github Pages를 활용한 정적 페이지 호스팅, GitHub에서 외부 기여자의 Pull Request 제안 병합</li>
+		</ul>
+		<div class="subtitle">GitHub Repository</div>
+		<ul style="list-style-type:none;">
+			<li><a href="https://github.com/rnjsxorwns12/JinHilla">https://github.com/rnjsxorwns12/JinHilla</a></li>
 		</ul>
 	</div>
 
 	<div class="project">
 	<div class="title">최신 웹 기술 학습</div>
-		<div class="subtitle">Vue.js</div>
+		<div class="subtitle">프론트엔드 기술</div>
 		<ul>
-			<li></li>
+			<li>Vue.js</li>
 		</ul>
-		<div class="subtitle">SpringBoot</div>
+		<div class="subtitle">백엔드 기술</div>
 		<ul>
-			<li></li>
+			<li>SpringBoot</li>
+		</ul>
+		<div class="subtitle">GitHub Repository</div>
+		<ul style="list-style-type:none;">
+			<li><a href="https://github.com/xorwns56/vue-js">https://github.com/xorwns56/vue-js</a></li>
+			<li><a href="https://github.com/xorwns56/spring-boot">https://github.com/xorwns56/spring-boot</a></li>
 		</ul>
 	</div>
 </div>
