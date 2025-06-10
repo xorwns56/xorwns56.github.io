@@ -1,236 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Gothic:wght@800&display=swap" rel="stylesheet">
-<title>권택준</title>
-<style>
-body{
-	font-family: "Nanum Gothic", serif;
-	font-weight: 800;
-	font-style: normal;
-	display: flex;
-	flex-direction:column;
-	align-items:center;
-	margin: 0;
-	font-size:20px;
-}
-.info{
-	min-width:600px;
-	width:100%;
-	position:sticky;
-	top:0px;
-	align-items:center;
-	justify-items:start;
-	display:grid;
-	z-index:1;
-	background-color:white;
-
-
-	grid-template-rows: 60px repeat(4, 30px);
-	height:180px;
-	padding:20px;
-}
-
-.projects{
-	max-width: 600px;
-	width:50%;
-	display:flex;
-	align-items:center;
-	text-align:center;
-	justify-content:center;
-	flex-direction:column;
-	padding:20px;
-}
-
-.project-group{
-	font-family: "Jua", serif;
-	font-weight: 400;
-	font-style: normal;
-	font-size:25px;
-}
-
-.project{
-	width:100%;
-	margin-top:30px;
-	background-color:white;
-	padding:20px;
-	display:flex;
-	flex-direction:column;
-  	border-radius: 20px;
-  	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
-}
-
-.title{
-	font-family: "Jua", serif;
-	font-weight: 400;
-	font-style: normal;
-	color:black;
-	padding:10px;
-	font-size:28px;
-}
-
-.subtitle{
-	color:#333333;
-	font-size:20px;
-	text-align:left;
-}
-
-.project ul{
-	color:#555555;
-	font-size:20px;
-	text-align: left;
-	list-style-type:square;
-}
-
-.project ul li{
-	margin-bottom: 10px;
-}
-
-a{
-	color:#3065AC;
-}
-</style>
+  <title>위치 정보 가져오기</title>
 </head>
 <body>
-<div class="info">
-<img style="grid-area: 1 / 1 / span 5 / span 1;justify-self:end;height:100%;border-radius:50px;border:3px solid #ccc;margin-right:25px;" src="./resource/photo.jpg"/>
-<span style="grid-area: 1 / 2 / span 1 / span 1;font-size:35px;justify-self:start;">권택준 Kwon Taek June</span>
-<div style="grid-area: 2 / 2 / span 1 / span 1;"><img src="./resource/phone.jpg"/>&nbsp;010-7159-9504</div>
-<div style="grid-area: 3 / 2 / span 1 / span 1;"><img src="./resource/mail.jpg"/>&nbsp;rnjsxorwns12@gmail.com</div>
-<div style="grid-area: 4 / 2 / span 1 / span 1;"><img src="./resource/github.jpg"/>&nbsp;<a href="https://github.com/xorwns56" target="_blank">https://github.com/xorwns56</a></div>
-<div style="grid-area: 5 / 2 / span 1 / span 1;"><img src="./resource/github.jpg"/>&nbsp;<a href ="https://github.com/rnjsxorwns12" target="_blank">https://github.com/rnjsxorwns12</a></div>
-</div>
 
-<div class="projects">
-	<div class="project-group">
-	<img src="./resource/helmet.jpg"/></br>육군본부 정보체계관리단</br>전산체계개발과</br>프로그램 작성병
-	</div>
+<button onclick="getLocation()">내 위치 가져오기</button>
+<p id="location"></p>
 
-	<div class="project">
-		<div class="title">인트라넷 웹 체계 유지보수 업무</div>
-		<div class="subtitle">개발 환경</div>
-		<ul>
-			<li>Eclipse(IDE)</li>
-			<li>Apache Tomcat(WAS)</li>
-			<li>Informix(Database)</li>
-		</ul>
-		<div class="subtitle">역할</div>
-		<ul>
-			<li>국방망을 통해 운영되는 웹 체계의 유지보수를 담당</li>
-			<li>소요 제기 담당자와의 의사 소통을 통해 프로젝트의 요구 사항을 파악 후 기능 개선</li>
-			<li>타 개발자가 작성한 코드를 분석 후 수정 및 보일러플레이트 코드 리팩토링</li>
-		</ul>
-		<div class="subtitle">핵심 기술</div>
-		<ul>
-			<li>HTML, CSS를 사용하여 웹 페이지 구조 설계 및 레이아웃 조정</li>
-			<li>JQuery를 활용하여 DOM 조작, 이벤트 처리, AJAX</li>
-			<li>JSP 동적 웹 페이지 작성</li>
-			<li>데이터베이스 연결 및 SQL 쿼리 작성</li>
-		</ul>
-	</div>
+<script>
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else {
+    document.getElementById("location").innerHTML = "이 브라우저에서는 위치 정보가 지원되지 않습니다.";
+  }
+}
 
-	<div class="project">
-	<div class="title">전자정부 표준프레임워크 개발자 과정</div>
-		<div class="subtitle">교육 내용</div>
-		<ul>
-			<li>전자정부 표준프레임워크를 활용한 웹 애플리케이션 개발 실습</li>
-		</ul>
-		<div class="subtitle">주요 학습 내용</div>
-		<ul>
-			<li>Maven을 활용한 의존성 관리 및 자동 빌드</li>
-			<li>Spring 기반의 MVC 아키텍처 설계 및 구현</li>
-			<li>iBatis를 이용한 데이터베이스 연동 및 SQL 맵핑 활용</li>
-			<li style="list-style-type:none;text-align:center;">
-			</br>
-			<img src="./resource/certificate.png" style="width:40%;border:1px solid #ccc;"/></li>
-		</ul>
-	</div>
-</div>
+function showPosition(position) {
+  document.getElementById("location").innerHTML =
+    "위도: " + position.coords.latitude +
+    "<br>경도: " + position.coords.longitude;
+}
 
-<div class="projects">
-	<div class="project-group">
-	<img src="./resource/graduation.jpg"/></br>상명대학교 천안캠퍼스</br>컴퓨터공학과</br>졸업 이후
-	</div>
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      alert("사용자가 위치 정보 제공을 거부했습니다.");
+      break;
+    case error.POSITION_UNAVAILABLE:
+      alert("위치 정보를 사용할 수 없습니다.");
+      break;
+    case error.TIMEOUT:
+      alert("위치 정보 요청이 시간 초과되었습니다.");
+      break;
+    case error.UNKNOWN_ERROR:
+      alert("알 수 없는 오류가 발생했습니다.");
+      break;
+  }
+}
+</script>
 
-	<div class="project">
-	<div class="title">MIDI 기반 음악 생성 Android 앱 개발</div>
-		<div class="subtitle">개발 환경</div>
-		<ul>
-			<li>Android Studio(IDE)</li>
-		</ul>
-		<div class="subtitle">핵심 기술</div>
-		<ul>
-			<li>Android UI(XML Layout) 설계</li>
-			<li>Java</li>
-			<li>MIDI 프로토콜</li>
-			<li>파일 입출력</li>
-		</ul>
-		<div class="subtitle">주요 기능</div>
-		<ul>
-		<li>Android UI를 활용하여 사용자 입력을 받아 MIDI 메시지 생성</li>
-		<li>생성된 MIDI 데이터를 조합하여 .mid 형식의 음악 파일로 변환 및 저장</li>
-		<li style="list-style-type:none;text-align:center;">
-			</br>
-			<video controls loop muted style="width:30%;">
-    			<source src="./resource/app-demo-video.mp4" type="video/mp4">
-			</video>
-			</li>
-		</ul>
-	</div>
-
-	<div class="project">
-	<div class="title">웹 화면 공유 게임 유틸리티 제작</div>
-		<div class="subtitle">개발환경</div>
-		<ul>
-			<li>VSCode(IDE)</li>
-			<li>GitHub(배포 및 관리)</li>
-		</ul>
-		<div class="subtitle">핵심 기술</div>
-		<ul>
-			<li>WebRTC API 화면공유 스트림</li>
-			<li>HTML Canvas 렌더링</li>
-			<li>Vanilla Javascript</li>
-			<li>이미지 프로세싱</li>
-		</ul>
-		<div class="subtitle">주요 기능</div>
-		<ul>
-			<li>공유된 화면의 이미지 분석을 통해 보스 패턴 감지 및 패턴 주기 예측</li>
-			<li>레이드 시간과 보스 체력을 기반으로 다음 패턴 발생 시점을 계산하여 음성 알림 제공</li>
-		</ul>
-		<div class="subtitle">GitHub Repository</div>
-		<ul style="list-style-type:none;">
-			<li><a href="https://github.com/rnjsxorwns12/JinHilla">https://github.com/rnjsxorwns12/JinHilla</a></li>
-		</ul>
-	</div>
-
-	<div class="project">
-	<div class="title">최신 웹 기술 학습</div>
-		<div class="subtitle">개발환경</div>
-		<ul>
-			<li>Spring Tool Suite(백엔드 IDE)</li>
-			<li>Apache Tomcat(백엔드 개발 서버)</li>
-			<li>MariaDB(Database)</li>
-			<li>Visual Studio Code(프론트엔드 IDE)</li>
-			<li>Node.js Webpack Dev Server(프론트엔드 개발 서버)</li>
-		</ul>
-		<div class="subtitle">핵심기술</div>
-		<ul>
-			<li>Vue Router를 활용한 클라이언트 사이드 라우팅 설정</li>
-			<li>개발 환경에서 프론트엔드와 백엔드가 다른 포트에서 실행되므로, vue.config.js에서 devServer.proxy 설정을 통해 CORS 문제 해결</li>
-			<li>Axios를 활용한 비동기 API 요청 및 JSON 데이터 바인딩</li>
-			<li>Spring Boot 기반의 RESTful API 서버 구축</li>
-			<li>MyBatis를 통해 데이터베이스 연동</li>
-		</ul>
-		<div class="subtitle">GitHub Repository</div>
-		<ul style="list-style-type:none;">
-			<li><a href="https://github.com/xorwns56/vue-js">https://github.com/xorwns56/vue-js</a></li>
-			<li><a href="https://github.com/xorwns56/spring-boot">https://github.com/xorwns56/spring-boot</a></li>
-		</ul>
-	</div>
-</div>
-</div>
 </body>
 </html>
